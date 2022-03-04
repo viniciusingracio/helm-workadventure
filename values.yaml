@@ -7,7 +7,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 image:
-  tag: ""
+  tag: "1.8.4"
 
 domain: "workadventure.minikube"
 
@@ -20,6 +20,7 @@ env:
   secretJitsiKey: ""
   jitsiPrivateMode: false
   debugMode: false
+  disableAnonymous: false
 
 #################### workadventure-back ####################
 back:
@@ -119,8 +120,11 @@ pusher:
     repository: "thecodingmachine/workadventure-pusher"
     pullPolicy: IfNotPresent
 
-  # Env front
-  env: {}
+  # Env pusher
+  env: 
+    opidClientId:
+    opidClientSecret:
+    opidClientIssuer:
 
   extraEnvs: 
     - name: KEY
