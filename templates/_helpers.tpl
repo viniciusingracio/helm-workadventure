@@ -101,19 +101,19 @@ Maps object names
 {{- end }}
 
 {{- define "workadventure.pusherUrl" -}}
-{{- printf "//%s.%s" .Values.pusher.name .Values.domain }}
+{{- printf "%s://%s.%s" .Values.env.defaultScheme .Values.pusher.name .Values.domain }}
 {{- end }}
 
 {{- define "workadventure.uploaderUrl" -}}
-{{- printf "//%s.%s" .Values.uploader.name .Values.domain }}
+{{- printf "%s://%s.%s" .Values.env.defaultScheme .Values.uploader.name .Values.domain }}
 {{- end }}
 
 {{- define "workadventure.frontUrl" -}}
-{{- printf "//%s.%s" .Values.front.env.name .Values.domain }}
+{{- printf "%s://%s.%s" .Values.env.defaultScheme .Values.front.env.name .Values.domain }}
 {{- end }}
 
 {{- define "workadventure.pusher.loginScreen" -}}
-{{- printf "//%s/%s" (include "workadventure.pusherUrl" .) "login-screen" }}
+{{- printf "%s/%s" (include "workadventure.pusherUrl" .) "login-screen" }}
 {{- end }}
 
 {{- define "workadventure.pusher.apiUrl" -}}

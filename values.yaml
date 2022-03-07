@@ -21,6 +21,7 @@ env:
   jitsiPrivateMode: false
   debugMode: false
   disableAnonymous: false
+  defaultScheme: http
 
 #################### workadventure-back ####################
 back:
@@ -31,8 +32,8 @@ back:
     repository: "thecodingmachine/workadventure-back"
     pullPolicy: IfNotPresent
 
-  # Env back
-  env: {}    
+  ## Env back
+  env: {}
 
   extraEnvs: 
     - name: KEY
@@ -72,8 +73,9 @@ front:
     repository: "thecodingmachine/workadventure-front"
     pullPolicy: IfNotPresent
 
-  # Env front
+  ## Env front
   env:
+    name: play
     turnServer: "turn:coturn.workadventu.re:443,turns:coturn.workadventu.re:443"
     turnUser: "workadventure"
     turnPassword: "WorkAdventure123"
@@ -120,7 +122,7 @@ pusher:
     repository: "thecodingmachine/workadventure-pusher"
     pullPolicy: IfNotPresent
 
-  # Env pusher
+  ## Env pusher
   env: 
     opidClientId:
     opidClientSecret:
@@ -165,7 +167,7 @@ uploader:
     repository: "thecodingmachine/workadventure-uploader"
     pullPolicy: IfNotPresent
 
-  # Env front
+  ## Env uploader
   env: {}
 
   extraEnvs: 
@@ -207,7 +209,7 @@ maps:
     repository: "thecodingmachine/workadventure-maps"
     pullPolicy: IfNotPresent
 
-  # Env front
+  ## Env maps
   env: {}
 
   extraEnvs: 
